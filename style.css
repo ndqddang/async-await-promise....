@@ -1,0 +1,104 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.container {
+    width: 800px;
+    height: 100%;
+    padding: 40px;
+    background-color: #f0f0f0;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.3),
+        -5px -5px 5px rgba(190, 57, 57, 0.3);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 4px;
+}
+
+.wrapper {
+    width: 100%;
+}
+
+.wrapper>.name,
+.age,
+.address,
+.status {
+    margin-top: 20px;
+}
+
+.name,
+.age,
+.address,
+.status {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#name,
+#age,
+#address>input {
+    width: 320px;
+    height: 26px;
+    padding: 0 7px;
+}
+
+#address {
+    width: 320px;
+    height: 26px;
+    padding: 0 7px;
+    margin-right: 10px;
+}
+
+.status #status {
+    width: 320px;
+    height: 26px;
+    margin-right: 30px;
+}
+
+.btn {
+    display: flex;
+}
+
+.addIf,
+.update {
+    padding: 8px 16px;
+    background-color: #5db63c;
+    margin-top: 10px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    margin-left: 60px;
+}
+
+.update {
+    margin-left: 10px;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+table thead tr th {
+    padding: 10px 20px;
+}
+
+table tbody tr td {
+    padding: 10px 20px;
+}

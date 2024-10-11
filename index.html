@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD_BASIC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Fill your infomation ...</h1>
+
+        <div class="wrapper">
+
+            <div class="name">
+                <label for="name">Điền tên bạn vào</label>
+                <input type="text" id="name">
+            </div>
+
+
+            <div class="age">
+                <label for="age">Điền tuổi bạn vào</label>
+                <input type="text" id="age">
+            </div>
+
+
+            <div class="address">
+                <label for="address">Điền địa chỉ bạn vào</label>
+                <input type="text" id="address">
+            </div>
+
+
+            <div class="status">
+                <label for="status">Chọn tình trạng hiện tại</label>
+                <select name="Chọn trạng thái" id="status">
+                    <option value="Chọn trạng thái">Chọn trạng thái</option>
+                    <option value="Độc thân">Độc thân</option>
+                    <option value="Có bồ rồi">Có bồ rồi</option>
+                    <option value="Sắp cưới nha">Sắp cưới nha</option>
+                </select>
+            </div>
+
+            <div class="btn">
+                <button class="addIf">Thêm item</button>
+                <button class="update" style="display: none;">Update</button>
+            </div>
+        </div>
+
+
+        <!-- table contains information of items -->
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Stt</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Address</th>
+                    <th>Status</th>
+                    <th>On edits</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Đăng Nguyễn Mười Tám </td>
+                    <td> 21</td>
+                    <td>Gia đức hoài ân bình định</td>
+                    <td>Có bồ</td>
+                    <td><ion-icon name="create-outline"></ion-icon></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+<script src="script.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</html>
