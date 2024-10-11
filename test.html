@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search box</title>
+</head>
+<style>
+    *{
+        padding: 0;margin: 0;box-sizing: border-box;
+        font-family: monospace;
+    }
+
+    body{
+     align-items: center;justify-content: center;   display: flex;
+        background: linear-gradient(to right, #48c4ea, #24db73);
+        width: 100%;
+        height: 90vh;
+    }
+  
+    .container_box{
+        position: relative;
+         width: 60px;
+        height:34px;
+        background-color: transparent;
+        overflow: hidden;
+    }
+    .container_box.active{
+        transition: all ease .9s;
+        width: 320px;
+        height:34px;
+    }
+    input{
+        position: absolute;
+        width: 220px;
+        height: 34px;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+        outline: none;
+        border: none;
+        padding: 0 20px 0 10px;
+        left: 40px;
+        background-color:#fff;
+        z-index:-1;
+    }   
+    button{
+        background-color: #efefe9fb;
+         outline: none;
+        border: none;z-index: 2;
+        position: absolute;
+        width: 60px;
+        height:34px;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        text-align: center;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+    }
+
+
+</style>
+<body>
+    <div class="container">
+        
+        <div class="container_box">
+            
+            <input type="text">
+            <button>
+                <ion-icon name="search-outline"></ion-icon>
+            </button>
+          
+
+        </div>
+    </div>
+
+    <script>
+        var container_box = document.querySelector(".container_box");
+        document.querySelector("button").onclick = function(){
+                var inputField = this.previousElementSibling;
+                if (inputField) {
+                    inputField.focus();
+                    inputField.value = "";
+                }    
+            container_box.classList.toggle("active");
+            
+        }
+    </script>
+  
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</html>
