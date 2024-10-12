@@ -62,14 +62,18 @@
 
      }
      .one_img{
-opacity: 0;
+         opacity: 0;
      }
      .one_img.active{
-opacity: 1;         position: absolute;
+        opacity: 1;         
+        position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
         transition: all 1.5s ease-in-out;
+        overflow: hidden;
+        overflow-y: hidden;
+        user-select: none;
      }
     .close{
         position: absolute;
@@ -86,6 +90,10 @@ opacity: 1;         position: absolute;
         position: absolute;
         top: 50%;
         right:10px;cursor: pointer;
+    }
+    .one_img.hide{
+        opacity: 0;
+        transition:  opacity .4s ease ;
     }
     </style>
 </head>
@@ -147,7 +155,8 @@ opacity: 1;         position: absolute;
             // currentIndex = index;
             currentIndex = index;
             // console.log(currentIndex);
-                document.querySelector(".one_img").classList.add("active");
+            document.querySelector(".one_img").classList.add("active");
+            document.querySelector(".one_img").classList.remove("hide");
                     moveImg(loopImg[currentIndex].src)
         })
     })
@@ -170,12 +179,10 @@ opacity: 1;         position: absolute;
 
 
     document.querySelector(".pre").addEventListener("click", () => {
-        console.log("pre")
             if (currentIndex > 0) {  // Đảm bảo currentIndex không nhỏ hơn 0
                 currentIndex--;  // Giảm chỉ số ảnh
                 moveImg(loopImg[currentIndex].src);  // Cập nhật lại src của ảnh
             }
-           
         });
     
     document.querySelector(".next").addEventListener("click", () => {
@@ -188,8 +195,9 @@ opacity: 1;         position: absolute;
     
     document.addEventListener("keydown",function(e){
         if(e.keyCode == 27){
-                 var close = document.querySelector(".close").parentElement;
-            close.remove();
+                 const close = document.querySelector(".close").parentElement;
+                 document.querySelector(".one_img").classList.remove("active");
+                close.classList.add("hide");
         }
     })
 
